@@ -1,0 +1,9 @@
+{
+  "name": "system-behavior-map",
+  "description": "Analyze any software project as a system (Meadows' Thinking in Systems): stocks, flows, feedback loops, delays, traps, leverage points, diagrams, behaviour-over-time charts from git history, and an iceberg dashboard with the questions to ask before changing it.",
+  "version": "0.1.0",
+  "author": {"name": "Atakan Atamert", "url": "https://github.com/atakanatamert"},
+  "repository": "https://github.com/atakanatamert/system-behavior-map",
+  "license": "MIT",
+  "keywords": ["systems-thinking", "architecture", "documentation", "meadows", "feedback-loops"]
+}

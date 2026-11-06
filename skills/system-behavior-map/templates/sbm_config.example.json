@@ -1,0 +1,20 @@
+{
+  "_comment": "Config for scripts/sbm_extract.py. Every key is optional. Choose counters from the stocks you identified in Step 3.",
+  "components": ["backend", "frontend", "ops"],
+  "code_ext": [".go", ".ts", ".tsx", ".py", ".sh"],
+  "counters": {
+    "routes": {"path": "backend/cmd/api/main.go", "regex": "\\.(Get|Post|Put|Delete|Patch)\\("},
+    "env_vars": {"path": "backend/internal/config/config.go", "regex": "os\\.Getenv|getEnv\\("}
+  },
+  "file_counters": {
+    "providers": {"prefix": "backend/internal/infrastructure/ai/", "name_regex": "^(openai|gemini|anthropic|groq)", "distinct": true}
+  },
+  "line_files": {"hub_lines": "backend/cmd/api/main.go"},
+  "line_groups": {"content_lines": ["frontend/lib/seo/guides.ts", "frontend/app/blog/blog-data.ts"]},
+  "events": {
+    ".github/workflows/ci.yml": "CI gates added",
+    "ops/postmortems/2026-01-first.md": "First postmortem"
+  },
+  "event_grep": ["revert", "hotfix", "rollback"],
+  "agent_authors": ["Claude", "github-actions[bot]", "dependabot[bot]"]
+}

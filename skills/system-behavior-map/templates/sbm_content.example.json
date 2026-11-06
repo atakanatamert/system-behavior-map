@@ -1,0 +1,50 @@
+{
+  "_comment": "Curated layer for scripts/sbm_dashboard.py. Replace every value; keep the shape. Every reading must trace to a finding in SYSTEM_BEHAVIOR.md and carry [seen] or [inferred].",
+  "title": "<Project> — system behaviour at a glance",
+  "subtitle": "Events on the surface, behaviour over time beneath, structure beneath that, the beliefs that hold it in place at the bottom. Each layer explains the one above it.",
+  "reference_date": "2026-01-01",
+  "structural_markers": ["2026-01-15", "2026-03-02", "2026-04-20"],
+  "markers_caption": "Vertical marks: CI gates (Jan 15), postmortem process (Mar 2), monorepo split (Apr 20).",
+  "events": [
+    {"date": "2025-10-01", "kind": "event", "label": "First commit", "detail": "What the repo looked like on day one."},
+    {"date": "2026-01-15", "kind": "structure", "label": "CI gates added", "detail": "A balancing loop begins: push → tests → fix. Note whether it is closed."},
+    {"date": "2026-03-02", "kind": "structure", "label": "Postmortem process starts", "detail": "An information flow: incidents become written knowledge."},
+    {"date": "2026-04-20", "kind": "event", "label": "Big-bang release", "detail": "N features shipped in one week. Which loop was running at full speed?"}
+  ],
+  "charts": [
+    {"key": "commits", "title": "Build rate", "unit": "commits / week", "form": "bar", "reading": "Where the bursts are and what preceded them."},
+    {"key": "added", "key2": "deleted", "label1": "added", "label2": "deleted", "title": "Lines added vs deleted", "unit": "per week", "form": "line2", "reading": "Is there a retirement flow at all?"},
+    {"key": "routes", "title": "API routes", "unit": "registered in the hub file", "form": "line", "reading": "Surface area over time."},
+    {"key": "hub_lines", "title": "The hub file", "unit": "lines", "form": "line", "reading": "The commons every feature writes into."},
+    {"key": "test_share:backend", "key2": "test_share:frontend", "label1": "backend", "label2": "frontend", "pct": true, "title": "Test share", "unit": "test bytes / all code bytes", "form": "line2", "reading": "Did tests arrive with a rule, or with a scare?"},
+    {"key": "docs_kb", "title": "Written knowledge", "unit": "KB of markdown", "form": "line", "reading": "The system's memory of itself."},
+    {"key": "migrations", "title": "Schema", "unit": "migrations", "form": "line", "reading": "Data model growth."},
+    {"key": "pages", "title": "Pages", "unit": "page files", "form": "line", "reading": "Frontend surface."}
+  ],
+  "loops": [
+    {"id": "R1", "kind": "R", "name": "Name the reinforcing loop", "path": "a → b → c → a", "status": "dominant / latent"},
+    {"id": "B1", "kind": "B", "name": "Name the balancing loop", "path": "x → gate → fix", "status": "closed / open / failed open"}
+  ],
+  "mental_models": [
+    {"belief": "A rule the docs state.", "evidence": "path/to/doc.md", "note": "What it does to the structure."},
+    {"belief": "A belief nobody wrote down but the charts show.", "evidence": "which charts", "note": "Mark it unstated."}
+  ],
+  "leverage": [
+    [12, "Numbers", "constants, timeouts, thresholds", false],
+    [11, "Buffers", "queues, slack", false],
+    [10, "Structure", "module boundaries, data model", false],
+    [9, "Delays", "build vs feedback speed", false],
+    [8, "Balancing loops", "tests, review, monitoring", false],
+    [7, "Reinforcing loops", "what compounds", false],
+    [6, "Information flows", "who can see what", false],
+    [5, "Rules", "merge gates, definition of done", false],
+    [4, "Self-organization", "ability to change own structure", false],
+    [3, "Goals", "stated vs revealed", false],
+    [2, "Paradigm", "the unexamined belief", false]
+  ],
+  "questions": [
+    "A question the repo alone cannot answer, tied to a finding, tagged with a leverage point.",
+    "Another one."
+  ],
+  "hypothesis": "The single structural change most likely to alter the dominant loop, with its counter-argument."
+}

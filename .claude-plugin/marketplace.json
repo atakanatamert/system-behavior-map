@@ -1,0 +1,11 @@
+{
+  "name": "system-behavior-map",
+  "owner": {"name": "Atakan Atamert", "url": "https://github.com/atakanatamert"},
+  "plugins": [
+    {
+      "name": "system-behavior-map",
+      "source": "./",
+      "description": "Read a software project as a system: stocks, flows, loops, traps, leverage points, diagrams and a behaviour-over-time dashboard."
+    }
+  ]
+}
